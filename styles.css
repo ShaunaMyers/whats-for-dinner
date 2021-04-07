@@ -14,12 +14,20 @@ div {
   padding: 8px;
 }
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~ Main ~~~~~~~~~~~~~~~~~~~ */
+body {
+  background-image: url(assets/burger-friends.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin: 0;
+}
 
+/* ~~~~~~~~~~~~~~~~~~~~~~~ Header~~~~~~~~~~~~~~~~~~~ */
 
 nav {
   display: flex;
   flex-direction: row;
+  background-color: #21ADA8;
 }
 
 /* body {
@@ -29,27 +37,27 @@ nav {
   object-fit: contain;
 } */
 
-body {
-  background-image: url(assets/burger-friends.jpg);
-  background-size: cover;                      /* <------ */
-  background-repeat: no-repeat;
-  background-position: center center;
-}
+
+
+
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~ Main ~~~~~~~~~~~~~~~~~~~ */
+
 
 main {
  display: flex;
  justify-content: space-around;
+ padding-top: 40px;
 }
 
 .meal-selection-box {
-  border: 2px solid black;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
   width: 500px;
   height: 330px;
   padding-left: 30px;
+  background-color: rgb(211,211,211, 0.9);
 }
 
 .meal-selection-contents {
@@ -59,12 +67,12 @@ main {
 
 
 .cookpot-box {
-  border: 2px solid black;
   display: flex;
   justify-content: center;
   box-sizing: border-box;
   width: 500px;
   height: 330px;
+  background-color: rgb(211,211,211, 0.9);
 }
 
 img {
@@ -77,4 +85,5 @@ img {
   border-radius: 3px;
   padding: 5px;
   margin-top: 8px;
+  background-color: #21ADA8;
 }
