@@ -34,6 +34,7 @@ h1 {
   margin: 15px 15px 0 15px;
   border-radius: 5px;
   background-color: rgb(211,211,211);
+  padding: 2px 2px 2px 2px 2px;
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~ Main ~~~~~~~~~~~~~~~~~~~ */
@@ -49,29 +50,33 @@ main {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  width: 500px;
-  height: 330px;
+  width: 550px;
+  height: 400px;
   padding-left: 30px;
   background-color: rgb(211,211,211, 0.9);
 }
 
 .meal-selection-contents {
-  margin: 30px 10px;
+  margin: 50px 20px;
   font-family: sans-serif;
 }
 
 div {
   display: flex;
   flex-direction: row;
-  padding: 8px;
+  padding: 12px;
+}
+
+label {
+  margin-left: 5px;
 }
 
 .cookpot-box {
   display: flex;
   justify-content: center;
   box-sizing: border-box;
-  width: 500px;
-  height: 330px;
+  width: 550px;
+  height: 400px;
   background-color: rgb(211,211,211, 0.9);
 }
 
