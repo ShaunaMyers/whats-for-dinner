@@ -8,9 +8,10 @@ red - #ee5253
 
 */
 
-input {
+div {
   display: flex;
-  flex direction: column;
+  flex-direction: row;
+  padding: 8px;
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~ Main ~~~~~~~~~~~~~~~~~~~ */
@@ -30,24 +31,28 @@ main {
 }
 
 
-.meal-selection {
+.meal-selection-box {
   border: 2px solid black;
   display: flex;
   flex-direction: column;
-  width: 35%;
-  height: 325px;
-  padding: 30px;
   box-sizing: border-box;
+  width: 500px;
+  height: 375px;
+  padding-left: 30px;
 }
+
+.meal-selection-contents {
+  margin-top: 40px;
+}
+
 
 .cookpot-box {
   border: 2px solid black;
-  /* margin-right: 30px; */
-  width: 35%;
-  height: 325px;
   display: flex;
   justify-content: center;
-  padding: 20px;
+  box-sizing: border-box;
+  width: 500px;
+  height: 375px;
 }
 
 img {
@@ -56,4 +61,8 @@ img {
 
 .mealbtn {
   display: inline;
+  width: 35%;
+  border-radius: 3px;
+  padding: 5px;
+  margin-top: 8px;
 }
