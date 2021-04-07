@@ -13,23 +13,47 @@ input {
   flex direction: column;
 }
 
+/* ~~~~~~~~~~~~~~~~~~~~~~~ Main ~~~~~~~~~~~~~~~~~~~ */
+
+
+nav {
+  display: flex;
+  flex-direction: row;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~ Main ~~~~~~~~~~~~~~~~~~~ */
+
 main {
  display: flex;
  flex-direction: right;
+ justify-content: space-around;
 }
+
 
 .meal-selection {
   border: 2px solid black;
-  /* margin-left: 30px; */
-  width: 30%;
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  height: 325px;
+  padding: 30px;
+  box-sizing: border-box;
 }
 
-.cookpot-image {
+.cookpot-box {
   border: 2px solid black;
   /* margin-right: 30px; */
-  width: 30%;
+  width: 35%;
+  height: 325px;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
 }
 
 img {
   width: 25%;
+}
+
+.mealbtn {
+  display: inline;
 }
