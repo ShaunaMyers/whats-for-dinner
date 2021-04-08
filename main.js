@@ -5,6 +5,8 @@ var radioBtn2 = document.querySelector('#main-dish');
 var radioBtn3 = document.querySelector('#dessert');
 var cookPotImage = document.querySelector('img');
 var cookpotContainer = document.querySelector('.cookpot-box');
+var divCookpotContainer = document.querySelector('.make-this-meal');
+var youShouldMake = document.querySelector('.tagline');
 
 
 
@@ -26,37 +28,27 @@ letsCookButton.addEventListener('click', letsCookMeal);
 function letsCookMeal() {
   if (document.getElementById('side').checked) {
     currentMeal = sides[getRandomIndex(sides)];
+    youShouldMake.classList.remove('hidden');
     cookPotImage.classList.add('hidden');
-    cookpotContainer.innerHTML += `
-      <p>You should make: </p>
+    divCookpotContainer.innerHTML += `
       <p>${currentMeal}</p>
     `
   } else if (document.getElementById('main-dish').checked) {
     currentMeal = mainDishes[getRandomIndex(mainDishes)];
+    youShouldMake.classList.remove('hidden');
     cookPotImage.classList.add('hidden');
-    cookpotContainer.innerHTML += `
-      <p>You should make: </p>
+    divCookpotContainer.innerHTML += `
       <p>${currentMeal}</p>
     `
   } else if (document.getElementById('dessert').checked) {
     currentMeal = desserts[getRandomIndex(desserts)];
+    youShouldMake.classList.remove('hidden');
     cookPotImage.classList.add('hidden');
-    cookpotContainer.innerHTML += `
-      <p>You should make: </p>
+    divCookpotContainer.innerHTML += `
       <p>${currentMeal}</p>
     `
   }
 }
-
-
-// function check() {
-//   document.getElementById("red").checked = true;
-// }
-//
-// function uncheck() {
-//   document.getElementById("red").checked = false;
-// }
-
 
 
 function getRandomIndex(array) {
