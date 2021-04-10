@@ -1,5 +1,5 @@
-var letsCookButton = document.querySelector('.mealbtn');
-// var radioButton = document.querySelectorAll('.meal-suggestion');
+var letsCookButton = document.querySelector('#mealbtn');
+var clearButton = document.querySelector('.clearbtn');
 var radioBtn1 = document.querySelector('#side');
 var radioBtn2 = document.querySelector('#main-dish');
 var radioBtn3 = document.querySelector('#dessert');
@@ -10,7 +10,7 @@ var youShouldMake = document.querySelector('.tagline');
 
 
 
-var currentMeal = [];
+var currentMeal;
 
 
 
@@ -18,59 +18,43 @@ var currentMeal = [];
 // ~~~~~~Event Listeners~~~~~~ //
 
 
-letsCookButton.addEventListener('click', letsCookMeal);
+letsCookButton.addEventListener('click', function() {
+  clearContents();
+  letsCookMeal();
+});
+
 
 
 
 // ~~~~~~~~Functions~~~~~~~~~~ //
 
 
+function clearContents() {
+  divCookpotContainer.innerHTML = "";
+  console.log(document.getElementById('dessert'));
+}
+
 function letsCookMeal() {
   if (document.getElementById('side').checked) {
-    currentMeal = sides[getRandomIndex(sides)];
-    youShouldMake.classList.remove('hidden');
-    cookPotImage.classList.add('hidden');
-    divCookpotContainer.innerHTML += `
-      <p>${currentMeal}</p>
-    `
+    createMealOption(sides);
   } else if (document.getElementById('main-dish').checked) {
-    currentMeal = mainDishes[getRandomIndex(mainDishes)];
-    youShouldMake.classList.remove('hidden');
-    cookPotImage.classList.add('hidden');
-    divCookpotContainer.innerHTML += `
-      <p>${currentMeal}</p>
-    `
+    createMealOption(mainDishes);
   } else if (document.getElementById('dessert').checked) {
-    currentMeal = desserts[getRandomIndex(desserts)];
-    youShouldMake.classList.remove('hidden');
-    cookPotImage.classList.add('hidden');
-    divCookpotContainer.innerHTML += `
-      <p>${currentMeal}</p>
-    `
+    createMealOption(desserts);
   }
+}
+
+function createMealOption(meal) {
+  currentMeal = meal[getRandomIndex(meal)];
+  youShouldMake.classList.remove('hidden');
+  cookPotImage.classList.add('hidden');
+  clearButton.classList.remove('hidden');
+  divCookpotContainer.innerHTML += `
+    <p>${currentMeal}</p>
+  `
 }
 
 
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
-//let's cook button is clicked
-  //Tied event listener to letsCook button
-  //Triggers Function
-
-//whatever radio button has been selected
-  //Loop through query selector all???
-//bring up specific dish from a list of possible dishes
-  //If it's dish 1
-  //math.random array
-  //If dish2
-  //math.random array
-
-//Query radio buttons individually
-//When let's cook button is clicked
-//fire Function
-  //If radio1 is clicked
-  //Loop through arry for sides
-  //etc.
-
-//When function is invoke
