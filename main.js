@@ -15,19 +15,10 @@ var currentMeal;
 
 
 
-
-// ~~~~~~Event Listeners~~~~~~ //
-
-
 letsCookButton.addEventListener('click', function() {
   clearContents();
   letsCookMeal();
 });
-
-
-
-
-// ~~~~~~~~Functions~~~~~~~~~~ //
 
 
 function clearContents() {
@@ -43,7 +34,7 @@ function letsCookMeal() {
   } else if (radioBtn3.checked) {
     createMealOption(desserts);
   } else if (radioBtn4.checked) {
-    createEntireMeal(sides, mainDishes, desserts);
+    createEntireMeal();
   }
 }
 
@@ -57,10 +48,11 @@ function createMealOption(meal) {
   `
 }
 
-function createEntireMeal(sides, mainDishes, desserts){
+function createEntireMeal(){
   currentMeal = new Meal(sides[getRandomIndex(sides)], mainDishes[getRandomIndex(mainDishes)], desserts[getRandomIndex(desserts)]);
   youShouldMake.classList.remove('hidden');
   cookPotImage.classList.add('hidden');
+  cookpotContainer.classList.add('cookpot-box-adjust');
   clearButton.classList.remove('hidden');
   divCookpotContainer.innerHTML += `
     <p id="entire-meal-string">${currentMeal.mainDish} with a side of ${currentMeal.side} and ${currentMeal.dessert} for dessert!</p>
