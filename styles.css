@@ -20,6 +20,15 @@ body {
   display: none;
 }
 
+#current-meal-string {
+  margin: 60px 60px;
+}
+
+#entire-meal-string {
+  font-size: 30px;
+  margin: 60px 40px;
+}
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~ Header~~~~~~~~~~~~~~~~~~~ */
 
 nav {

@@ -3,6 +3,7 @@ var clearButton = document.querySelector('.clearbtn');
 var radioBtn1 = document.querySelector('#side');
 var radioBtn2 = document.querySelector('#main-dish');
 var radioBtn3 = document.querySelector('#dessert');
+var radioBtn4 = document.querySelector('#entire-meal');
 var cookPotImage = document.querySelector('img');
 var cookpotContainer = document.querySelector('.cookpot-box');
 var divCookpotContainer = document.querySelector('.make-this-meal');
@@ -35,12 +36,14 @@ function clearContents() {
 }
 
 function letsCookMeal() {
-  if (document.getElementById('side').checked) {
+  if (radioBtn1.checked) {
     createMealOption(sides);
-  } else if (document.getElementById('main-dish').checked) {
+  } else if (radioBtn2.checked) {
     createMealOption(mainDishes);
-  } else if (document.getElementById('dessert').checked) {
+  } else if (radioBtn3.checked) {
     createMealOption(desserts);
+  } else if (radioBtn4.checked) {
+    createEntireMeal(sides, mainDishes, desserts);
   }
 }
 
@@ -50,7 +53,17 @@ function createMealOption(meal) {
   cookPotImage.classList.add('hidden');
   clearButton.classList.remove('hidden');
   divCookpotContainer.innerHTML += `
-    <p>${currentMeal}</p>
+    <p id="current-meal-string">${currentMeal}!</p>
+  `
+}
+
+function createEntireMeal(sides, mainDishes, desserts){
+  currentMeal = new Meal(sides[getRandomIndex(sides)], mainDishes[getRandomIndex(mainDishes)], desserts[getRandomIndex(desserts)]);
+  youShouldMake.classList.remove('hidden');
+  cookPotImage.classList.add('hidden');
+  clearButton.classList.remove('hidden');
+  divCookpotContainer.innerHTML += `
+    <p id="entire-meal-string">${currentMeal.mainDish} with a side of ${currentMeal.side} and ${currentMeal.dessert} for dessert!</p>
   `
 }
 
